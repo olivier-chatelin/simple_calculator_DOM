@@ -1,0 +1,110 @@
+/*
+Reset des valeurs du navigateur par défaut
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*
+On définit une taille de police sur l'élément HTML,
+ce qui nous permet d'utiliser les rem dans tout le
+reste du CSS.
+*/
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  background-color: #f76c6c;
+}
+
+h1 {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+.container {
+  width: 80vw;
+  /*
+    Appliquer une marge "auto" sur les côtés
+    left et right nous permet de centrer un
+    élément de type block.
+
+    !!! Sa largeur doit être précisée !!!
+    */
+  margin: 0 auto;
+}
+
+/*
+On applique les même styles pour les 
+différents éléments de la calculatrice
+*/
+input,
+select,
+button,
+#result {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  border: none;
+}
+
+/*
+On masque les libellés des champs (label) pour
+plus de clarté. Les laisser dans le HTML permettra
+aux navigateurs vocaux de les lire
+*/
+label {
+  display: none;
+}
+
+select,
+button {
+  appearance: none; /* Permet de masquer la flèche du select */
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+/*
+Effet de survol sur le select et le bouton
+*/
+select:hover,
+button:hover {
+  color: white;
+  background-color: #bf3a41;
+  transition: all 0.5s ease-in-out; /* Un peu d'animation \o/ */
+}
+
+#result {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #333;
+}
+
+/*
+Etant "mobile first", on ajuste pour les résolutions
+au dessus de 767px
+*/
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .container {
+    width: min(50vw, 500px);
+  }
+}
